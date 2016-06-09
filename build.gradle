@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+group = 'rcstadheim'
+
+version = "$major.$minor.5"
+
+repositories {
+    mavenCentral()
+}
+
+/*
+dependencies {
+    compile group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: htmlunitVersion
+}
+*/
