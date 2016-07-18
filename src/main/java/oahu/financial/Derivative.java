@@ -19,7 +19,7 @@ public interface Derivative {
     public enum OptionType { CALL, PUT, UNDEF };
 
     Stock getStock();
-    int getOpType();
+    OptionType getOpType();
     String getOpTypeStr();
     double getX();
     String getTicker();

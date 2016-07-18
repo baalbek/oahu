@@ -6,7 +6,7 @@ import java.time.LocalDate;
  * Created by rcs on 21.06.16.
  *
  */
-public interface NetfondsBeanFactory {
+public interface EtradeBeanFactory {
     /*
     private String optionName;
     private String optionType;

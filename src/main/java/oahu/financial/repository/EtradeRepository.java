@@ -8,7 +8,7 @@ import java.util.Optional;
  * Created by rcs on 20.10.14.
  *
  */
-public interface DerivativeRepository<T> {
+public interface EtradeRepository<T> {
     Optional<DerivativePrice> findDerivativePrice(T optionInfo);
     void invalidate(String ticker);
     void invalidateAll();
