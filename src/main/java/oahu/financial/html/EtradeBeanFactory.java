@@ -21,4 +21,5 @@ public interface EtradeBeanFactory {
                             LocalDate expiry,
                             double buy,
                             double sell);
+    void onStockPriceParsed(double opn, double hi, double lo, double close, int volume);
 }
