@@ -13,8 +13,8 @@ import java.util.Optional;
 public interface EtradeRepository<T> {
     Optional<DerivativePrice> findDerivativePrice(T optionInfo);
     Optional<StockPrice> stockPrice(String ticker);
-    Optional<Collection<DerivativePrice>> puts(String ticker);
-    Optional<Collection<DerivativePrice>> calls(String ticker);
+    Collection<DerivativePrice> puts(String ticker);
+    Collection<DerivativePrice> calls(String ticker);
     void invalidate(String ticker);
     void invalidateAll();
 }
