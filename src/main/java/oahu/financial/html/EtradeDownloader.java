@@ -7,6 +7,7 @@ package oahu.financial.html;
 import oahu.dto.Tuple;
 
 import java.io.IOException;
+import java.util.Optional;
 
 /**
  *
@@ -22,5 +23,5 @@ public interface EtradeDownloader<WebClientType,HtmlPageType> {
     HtmlPageType getLoginPage();
     HtmlPageType getLogoutPage();
     WebClientType getWebClient();
-    Tuple<String> logonParam();
+    Optional<Tuple<String>> logonParam();
 }

@@ -8,8 +8,10 @@ repositories {
     mavenCentral()
 }
 
-/*
-dependencies {
-    compile group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: htmlunitVersion
+def jarFile = new File("$libsDir/oahu-${version}.jar")
+
+//*
+task copyToParentProject(type: Copy, dependsOn: jar) {
+    into parentDist from jarFile
 }
-*/
+//*/
