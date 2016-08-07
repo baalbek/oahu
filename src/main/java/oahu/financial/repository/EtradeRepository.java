@@ -1,5 +1,6 @@
 package oahu.financial.repository;
 
+import oahu.financial.Derivative;
 import oahu.financial.DerivativePrice;
 import oahu.financial.StockPrice;
 
@@ -15,6 +16,7 @@ public interface EtradeRepository<T> {
     Optional<StockPrice> stockPrice(String ticker);
     Collection<DerivativePrice> puts(String ticker);
     Collection<DerivativePrice> calls(String ticker);
+    Collection<Derivative> callPutDefs(String ticker);
     void invalidate(String ticker);
     void invalidateAll();
 }
