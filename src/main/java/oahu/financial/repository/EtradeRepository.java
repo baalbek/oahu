@@ -4,6 +4,7 @@ import oahu.financial.Derivative;
 import oahu.financial.DerivativePrice;
 import oahu.financial.StockPrice;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -17,6 +18,7 @@ public interface EtradeRepository<T> {
     Collection<DerivativePrice> puts(String ticker);
     Collection<DerivativePrice> calls(String ticker);
     Collection<Derivative> callPutDefs(String ticker);
+    Collection<Derivative> callPutDefs(File f);
     void invalidate(String ticker);
     void invalidateAll();
 }
