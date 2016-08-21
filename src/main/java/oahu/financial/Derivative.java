@@ -16,10 +16,13 @@ public interface Derivative {
     public static int PUT = 2;
     public static int OPTYPE_UNDEF = 3;
 
-    public enum OptionType { CALL, PUT, UNDEF };
+    public static enum OptionType { CALL, PUT, UNDEF };
+
+    public static enum LifeCycle { FROM_HTML, SAVED_TO_DATABASE, FROM_DATABASE };
 
     Stock getStock();
     OptionType getOpType();
+    LifeCycle getLifeCycle();
     String getOpTypeStr();
     double getX();
     String getTicker();

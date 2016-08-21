@@ -21,4 +21,6 @@ public interface EtradeRepository<T> {
     Collection<Derivative> callPutDefs(String ticker, File f);
     void invalidate(String ticker);
     void invalidateAll();
+    void saveToPersistentDataStore();
+    void saveToPersistentDataStore(String ticker);
 }
