@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Consumer;
 
 /**
  * Created by rcs on 04.08.14.
@@ -20,7 +21,7 @@ public interface StockMarketRepository {
     Collection<DerivativePrice> getCallPrices(String ticker);
     Collection<DerivativePrice> getPutPrices(String ticker);
     */
-    void insertDerivative(Derivative derivative);
+    void insertDerivative(Derivative derivative, Consumer<Exception> errorHandler);
     Optional<Derivative> findDerivative(String derivativeTicker);
     Stock findStock(String ticker);
 
