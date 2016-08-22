@@ -13,6 +13,7 @@ import java.util.Optional;
  *
  */
 public interface EtradeRepository<T> {
+    public static enum PersistentCategory { OPTION_REF, OPTION_PRICE, STOCK_PRICE, ALL};
     Optional<DerivativePrice> findDerivativePrice(T optionInfo);
     Optional<StockPrice> stockPrice(String ticker);
     Collection<DerivativePrice> puts(String ticker);
@@ -21,6 +22,6 @@ public interface EtradeRepository<T> {
     Collection<Derivative> callPutDefs(String ticker, File f);
     void invalidate(String ticker);
     void invalidateAll();
-    void saveToPersistentDataStore();
-    void saveToPersistentDataStore(String ticker);
+    void saveToPersistentDataStore(PersistentCategory category);
+    void saveToPersistentDataStore(String ticker, PersistentCategory category);
 }

@@ -20,6 +20,7 @@ public interface StockMarketRepository {
     Collection<DerivativePrice> getCallPrices(String ticker);
     Collection<DerivativePrice> getPutPrices(String ticker);
     */
+    void insertDerivative(Derivative derivative);
     Optional<Derivative> findDerivative(String derivativeTicker);
     Stock findStock(String ticker);
 
