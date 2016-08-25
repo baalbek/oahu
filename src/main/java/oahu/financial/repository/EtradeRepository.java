@@ -19,9 +19,9 @@ public interface EtradeRepository<T,T2> {
     Collection<DerivativePrice> puts(String ticker);
     Collection<DerivativePrice> calls(String ticker);
     Collection<Derivative> callPutDefs(String ticker);
-    Collection<Derivative> callPutDefs(T2 ctx);
+    Collection<Derivative> callPutDefs(String ticker, File suppliedFile);
     void invalidate(String ticker);
     void invalidateAll();
     void saveToPersistentDataStore(PersistentCategory category);
-    void saveToPersistentDataStore(T2 ctx, PersistentCategory category);
+    void saveToPersistentDataStore(String ticker, File suppliedFile, PersistentCategory category);
 }
