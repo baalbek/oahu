@@ -14,6 +14,7 @@ import java.util.Optional;
  */
 public interface EtradeRepository<T,T2> {
     public static enum PersistentCategory { OPTION_REF, OPTION_PRICE, STOCK_PRICE, ALL};
+
     Optional<DerivativePrice> findDerivativePrice(T optionInfo);
     Optional<StockPrice> stockPrice(String ticker);
     Collection<DerivativePrice> puts(String ticker);
