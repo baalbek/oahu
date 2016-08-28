@@ -1,13 +1,10 @@
 package oahu.aspects.cache;
 
-import oahu.annotations.Cache;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
-import org.aspectj.lang.reflect.MethodSignature;
 
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +13,9 @@ public class CacheAspect {
 
     private Map<Integer, Map<String, Object>> objectCache = new HashMap<>();
 
+    private CacheKeyFactory keyFactory;
     //private Map<String, Object> methodCache = new HashMap<>();
+
 
     @Pointcut("execution(@oahu.annotations.Cache * *(..))")
     public void cachePointcut() {
@@ -33,7 +32,7 @@ public class CacheAspect {
             methodCache = new HashMap<>();
             objectCache.put(hc, methodCache);
         }
-        String key = getKey(jp,thisObj);
+        String key = keyFactory.getKey(jp, thisObj);
         if (methodCache.containsKey(key)){
             System.out.printf("Returning results from cache, key: %s\n", key);
             return methodCache.get(key);
@@ -44,15 +43,6 @@ public class CacheAspect {
             System.out.printf("Putting in cache for key: %s\n", key);
             return result;
         }
-    }
-
-    private String getKey(ProceedingJoinPoint jp, Object thisObj) {
-        Object[] args = jp.getArgs();
-        MethodSignature signature = (MethodSignature) jp.getSignature();
-        Method method = signature.getMethod();
-        Cache a = method.getAnnotation(Cache.class);
-
-        return String.format("%d:%d:%s", thisObj.hashCode(), a.id(), args[0]);
     }
 
     /*
@@ -74,4 +64,7 @@ public class CacheAspect {
         objectCache.remove(hc);
     }
 
+    public void setKeyFactory(CacheKeyFactory keyFactory) {
+        this.keyFactory = keyFactory;
+    }
 }
