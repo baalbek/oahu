@@ -16,7 +16,17 @@ public class CacheAspect {
     private CacheKeyFactory keyFactory;
     //private Map<String, Object> methodCache = new HashMap<>();
 
+    @Pointcut("execution(* playground.ReposImpl.*(..))")
+    public void reposPointcut() {
+    }
 
+    @Around("reposPointcut()")
+    public Object reposPointcutMethod(ProceedingJoinPoint jp) throws Throwable {
+        System.out.println("In repos pointcut");
+        return jp.proceed();
+    }
+
+    /*
     @Pointcut("execution(@oahu.annotations.Cache * *(..))")
     public void cachePointcut() {
     }
@@ -45,7 +55,6 @@ public class CacheAspect {
         }
     }
 
-    /*
     public void invalidate(int hashCode, int methodId, Object arg) {
         String key = String.format("%d:%d:%s", hashCode, methodId, arg);
         if (methodCache.containsKey(key)) {

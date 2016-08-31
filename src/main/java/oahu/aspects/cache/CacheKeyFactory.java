@@ -8,4 +8,5 @@ import org.aspectj.lang.ProceedingJoinPoint;
  */
 public interface CacheKeyFactory {
     String getKey(ProceedingJoinPoint jp, Object thisObj);
+    String getKey(ProceedingJoinPoint jp);
 }

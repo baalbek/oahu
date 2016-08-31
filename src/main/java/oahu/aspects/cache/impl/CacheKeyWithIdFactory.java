@@ -2,6 +2,7 @@ package oahu.aspects.cache.impl;
 
 import oahu.annotations.Cache;
 import oahu.aspects.cache.CacheKeyFactory;
+import oahu.exceptions.NotImplementedException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 
@@ -20,5 +21,10 @@ public class CacheKeyWithIdFactory implements CacheKeyFactory {
         Cache a = method.getAnnotation(Cache.class);
 
         return String.format("%d:%d:%s", thisObj.hashCode(), a.id(), args[0]);
+    }
+
+    @Override
+    public String getKey(ProceedingJoinPoint jp) {
+        throw new NotImplementedException();
     }
 }

@@ -1,6 +1,5 @@
 package oahu.financial.repository;
 
-import oahu.annotations.Cache;
 import oahu.financial.Derivative;
 import oahu.financial.DerivativePrice;
 import oahu.financial.StockPrice;
@@ -15,20 +14,12 @@ import java.util.Optional;
  */
 public interface EtradeRepository<T,T2> {
     public static enum PersistentCategory { OPTION_REF, OPTION_PRICE, STOCK_PRICE, ALL};
-
-    @Cache(id=1)
     Optional<DerivativePrice> findDerivativePrice(T optionInfo);
-
     Optional<StockPrice> stockPrice(String ticker);
-
     Collection<DerivativePrice> puts(String ticker);
-
     Collection<DerivativePrice> calls(String ticker);
-
     Collection<Derivative> callPutDefs(String ticker);
-
     Collection<Derivative> callPutDefs(String ticker, File suppliedFile);
-
     void saveToPersistentDataStore(PersistentCategory category);
     void saveToPersistentDataStore(String ticker, File suppliedFile, PersistentCategory category);
 }
