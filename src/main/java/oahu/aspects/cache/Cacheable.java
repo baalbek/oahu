@@ -9,3 +9,12 @@ import java.util.UUID;
 public interface Cacheable {
     UUID getUUID();
 }
+
+
+/*
+    public String getKey(ProceedingJoinPoint jp, Object thisObj) {
+        Object[] args = jp.getArgs();
+        MethodSignature signature = (MethodSignature) jp.getSignature();
+        Method method = signature.getMethod();
+        Cache a = method.getAnnotation(Cache.class);
+        */
