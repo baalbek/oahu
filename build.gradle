@@ -10,7 +10,7 @@ repositories {
 
 dependencies {
     //------------------- aspectj -------------------
-    compile "org.aspectj:aspectjrt:$aspectjVersion"
+    // compile "org.aspectj:aspectjrt:$aspectjVersion"
 }
 
 def jarFile = new File("$libsDir/oahu-${version}.jar")
