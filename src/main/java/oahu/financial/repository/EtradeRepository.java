@@ -5,6 +5,7 @@ import oahu.financial.DerivativePrice;
 import oahu.financial.StockPrice;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -25,4 +26,5 @@ public interface EtradeRepository<T,T2> {
     Collection<Derivative> callPutDefs(String ticker, File suppliedFile);
     void saveToPersistentDataStore(PersistentCategory category);
     void saveToPersistentDataStore(String ticker, File suppliedFile, PersistentCategory category);
+    void setDownloadDate(LocalDate localDate);
 }
