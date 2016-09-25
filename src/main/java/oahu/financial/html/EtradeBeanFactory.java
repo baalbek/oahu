@@ -1,6 +1,7 @@
 package oahu.financial.html;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  * Created by rcs on 21.06.16.
@@ -21,5 +22,5 @@ public interface EtradeBeanFactory {
                             LocalDate expiry,
                             double buy,
                             double sell);
-    void onStockPriceParsed(double opn, double hi, double lo, double close, int volume);
+    void onStockPriceParsed(LocalTime spotTime, double opn, double hi, double lo, double close, int volume);
 }
