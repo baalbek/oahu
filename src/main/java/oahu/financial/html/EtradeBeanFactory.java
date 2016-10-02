@@ -22,5 +22,17 @@ public interface EtradeBeanFactory {
                             LocalDate expiry,
                             double buy,
                             double sell);
-    void onStockPriceParsed(LocalTime spotTime, double opn, double hi, double lo, double close, int volume);
+    void onStockPriceParsed(LocalTime spotTime,
+                            double opn,
+                            double hi,
+                            double lo,
+                            double close,
+                            int volume);
+    void onStockPriceParsed(LocalDate spotDate,
+                            LocalTime spotTime,
+                            double opn,
+                            double hi,
+                            double lo,
+                            double close,
+                            int volume);
 }
