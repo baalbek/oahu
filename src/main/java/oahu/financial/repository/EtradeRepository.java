@@ -1,5 +1,6 @@
 package oahu.financial.repository;
 
+import oahu.dto.Tuple3;
 import oahu.financial.Derivative;
 import oahu.financial.DerivativePrice;
 import oahu.financial.StockPrice;
@@ -27,4 +28,8 @@ public interface EtradeRepository<T,T2> {
     void saveToPersistentDataStore(PersistentCategory category);
     void saveToPersistentDataStore(String ticker, File suppliedFile, PersistentCategory category);
     void setDownloadDate(LocalDate localDate);
+
+    Tuple3<Optional<StockPrice>,Collection<DerivativePrice>,Collection<DerivativePrice>>
+        parseHtmlFor(String ticker,File suppliedFile);
+
 }
