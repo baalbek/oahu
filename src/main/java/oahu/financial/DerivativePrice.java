@@ -15,6 +15,8 @@ public interface DerivativePrice {
     double getIvSell();
     double getBuy();
     double getSell();
+    double getBreakEven();
+    double calcRisc(double value);
     int getOid();
     void setOid(int oid);
 }
