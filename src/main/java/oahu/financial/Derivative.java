@@ -12,9 +12,11 @@ public interface Derivative {
     public static int BUY = 1;
     public static int SELL = 2;
 
+    /*
     public static int CALL = 1;
     public static int PUT = 2;
     public static int OPTYPE_UNDEF = 3;
+    //*/
 
     public static enum OptionType { CALL, PUT, UNDEF };
 

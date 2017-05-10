@@ -1,6 +1,7 @@
 package oahu.financial;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 /**
@@ -19,6 +20,7 @@ public interface StockPrice {
     int getVolume();
     Stock getStock();
     LocalDate getLocalDx();
+    LocalTime getTm();
     int getOid();
     void assign(StockPrice other);
     List<DerivativePrice> getOptionPrices();
