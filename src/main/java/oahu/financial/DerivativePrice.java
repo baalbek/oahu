@@ -1,6 +1,8 @@
 package oahu.financial;
 
 
+import java.util.Optional;
+
 /**
  * Created with IntelliJ IDEA.
  * User: rcs
@@ -15,8 +17,8 @@ public interface DerivativePrice {
     double getIvSell();
     double getBuy();
     double getSell();
-    double getBreakEven();
-    double calcRisc(double value);
+    Optional<Double> getBreakEven();
+    Optional<Double> calcRisc(double value);
     int getOid();
     void setOid(int oid);
     String getTicker();
