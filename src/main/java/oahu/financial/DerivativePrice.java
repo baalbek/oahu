@@ -13,8 +13,8 @@ public interface DerivativePrice {
     Derivative getDerivative();
     StockPrice getStockPrice();
     double getDays();
-    double getIvBuy();
-    double getIvSell();
+    Optional<Double> getIvBuy();
+    Optional<Double> getIvSell();
     double getBuy();
     double getSell();
     Optional<Double> getBreakEven();
