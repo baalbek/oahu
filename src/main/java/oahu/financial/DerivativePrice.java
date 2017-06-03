@@ -19,4 +19,5 @@ public interface DerivativePrice {
     double calcRisc(double value);
     int getOid();
     void setOid(int oid);
+    String getTicker();
 }
