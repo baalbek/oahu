@@ -18,7 +18,8 @@ public interface DerivativePrice {
     double getBuy();
     double getSell();
     Optional<Double> getBreakEven();
-    Optional<Double> calcRisc(double value);
+    Optional<Double> stockPriceFor(double optionValue);
+    double optionPriceFor(double stockPrice);
     int getOid();
     void setOid(int oid);
     String getTicker();
