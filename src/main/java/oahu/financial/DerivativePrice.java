@@ -24,5 +24,6 @@ public interface DerivativePrice {
     void setOid(int oid);
     String getTicker();
     public double getCurrentRiscOptionValue();
+    public double getCurrentRisc();
     public Optional<Double> getCurrentRiscStockPrice();
 }
