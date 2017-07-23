@@ -38,6 +38,8 @@ public interface JanitorContext {
     boolean isRollingOptions();
     int getRollingInterval();
     boolean isOneTimeDownloadOptions();
+    boolean isDownloadDepth();
+    boolean isDownloadNumPurchases();
     boolean isSpotFromDownloadedOptions();
     boolean isTestRun();
 }
