@@ -32,4 +32,5 @@ public interface Derivative {
     void setOid(int oid);
     LocalDate getExpiry();
     String getSeries();
+    long getDays();
 }
